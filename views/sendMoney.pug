@@ -1,0 +1,11 @@
+html
+	head
+		title Add Money
+	body
+		h3 Add Money to your Wallet
+		if(message)
+			h4 #{message}
+		form(action = "/SendToWallet" method = "POST")
+			input(name = "phoneNumber" type = "text" required placeholder = "Phone")
+			input(name = "amount" type = "text" required placeholder = "Amount")
+			button(type = "Submit") SendToWallet

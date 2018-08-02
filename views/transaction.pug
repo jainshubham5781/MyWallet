@@ -1,0 +1,23 @@
+html
+	head
+		title Transactions
+	body
+		if(message)
+			h4 #{message}
+		if(walletAmount)
+			h5 Wallet Amount: #{walletAmount}
+
+		if(result)
+			-var ob = JSON.parse(result)
+			-for (var item in ob) {
+				ul
+					li= ob[item].date
+					if(ob[item].to)
+						li= ob[item].to
+					if(ob[item].from)
+						li= ob[item].from
+					li= ob[item].amountTransfer
+					li= ob[item].type			
+			- }
+				
+

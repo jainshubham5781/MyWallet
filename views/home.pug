@@ -1,0 +1,41 @@
+html
+	head
+		title Home
+		script
+			include js/chat.js
+		script(src='/socket.io/socket.io.js')
+	body
+		if(message)
+			h4 #{message}
+		h3 #{walletAmount}
+
+		form(action = "/logout" method = "Get")
+			button(type = "Submit") LogOut
+
+		form(action = "/profile" method = "Get")
+			button(type = "Submit") Profile
+
+		form(action = "/SendToWallet" method = "Get")
+			button(type = "Submit") SendToWallet
+
+		form(action = "/SendToBank" method = "Get")
+			button(type = "Submit") SendToBank
+
+		form(action = "/AddAccount" method = "Get")
+			button(type = "Submit") AddAccount
+		
+		form(action = "/AddToWallet" method = "Get")
+			button(type = "Submit") AddToWallet
+
+		form(action = "/showTransaction" method = "Get")
+			button(type = "Submit") Transactions
+
+
+
+		#content(style='width: 500px; height: 150px; margin: 0 0 20px 0; border: solid 1px #999; overflow-y: scroll;')
+		.controls
+			| Name: 
+			input#name(style='width:350px;')
+			br
+			input#field(style='width:350px;')
+			input#send(type='button', value='send')
